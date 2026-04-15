@@ -15,6 +15,24 @@ Opening terminal and write in this a command
  ```
 ng serve --host 0.0.0.0
 ```
+
+Only and this not helping , do write this code in fale angular congif. Need change options serve on this :
+```
+"serve": {
+  "builder": "@angular/build:dev-server",
+  "options": {
+    "port": 4200,
+    "host": "0.0.0.0",
+    "allowedHosts": ["localhost"],
+    "buildTarget": "logcomp:build:development"
+  },
+  "configurations": {
+    "production": {
+      "buildTarget": "logcomp:build:production"
+    }
+  }
+}
+```
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
